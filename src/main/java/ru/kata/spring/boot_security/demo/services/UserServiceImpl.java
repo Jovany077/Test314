@@ -25,7 +25,6 @@ public class UserServiceImpl implements UserService {
     public List<User> findAll() { return userRepository.findAll(); }
 
     @Override
-    @Transactional
     public User findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
@@ -34,11 +33,13 @@ public class UserServiceImpl implements UserService {
     public User findById(Long id) { return userRepository.findById(id).orElse(null); }
 
     @Override
+    @Transactional
     public void saveUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
     }
 
     @Override
+    @Transactional
     public void deleteById(Long id) { userRepository.deleteById(id); }
 }
