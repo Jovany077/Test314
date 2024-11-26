@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @Component
 public class UserConverter {
 
-    public static UserDTO toUserDTO(User user) {
+    public UserDTO toUserDTO(User user) {
         UserDTO userDTO = new UserDTO();
         userDTO.setId(user.getId());
         userDTO.setUsername(user.getUsername());
@@ -25,7 +25,7 @@ public class UserConverter {
         return userDTO;
     }
 
-    public static User toUser(UserDTO userDTO, RoleService roleService) {
+    public User toUser(UserDTO userDTO, RoleService roleService) {
         User user = new User();
         user.setId(userDTO.getId());
         user.setUsername(userDTO.getUsername());

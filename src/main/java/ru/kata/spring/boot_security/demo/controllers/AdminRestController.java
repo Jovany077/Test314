@@ -46,7 +46,7 @@ public class AdminRestController {
     public ResponseEntity<UserDTO> addUser(@RequestBody UserDTO userDTO) {
         User user = userConverter.toUser(userDTO, roleService);
         userService.saveUser(user);
-        return  ResponseEntity.ok(UserConverter.toUserDTO(user));
+        return  ResponseEntity.ok(userConverter.toUserDTO(user));
     }
 
     @PutMapping("/edit/{id}")
@@ -70,7 +70,7 @@ public class AdminRestController {
 
     @GetMapping("/current")
     public ResponseEntity<User> getCurrent(Principal principal) {
-        User user = (User) userService.findByUsername(principal.getName());
+        User user = userService.findByUsername(principal.getName());
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
