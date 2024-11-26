@@ -40,18 +40,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/api").permitAll();
-//                .antMatchers("/admin/**").hasRole("ADMIN")
-//                .antMatchers(HttpMethod.POST, "/admin/edit").hasRole("ADMIN")
-//                .antMatchers("/api/**").hasRole("ADMIN")
-//                .antMatchers("/user/**").hasAnyRole("USER","ADMIN")
-//                .anyRequest().authenticated()
-//                .and()
-//                .formLogin().successHandler(successUserHandler)
-//                .permitAll()
-//                .and()
-//                .logout()
-//                .permitAll();
+                .antMatchers("/", "/api").permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/admin/edit").hasRole("ADMIN")
+                .antMatchers("/api/**").hasRole("ADMIN")
+                .antMatchers("/user/**").hasAnyRole("USER","ADMIN")
+                .anyRequest().authenticated()
+                .and()
+                .formLogin().successHandler(successUserHandler)
+                .permitAll()
+                .and()
+                .logout()
+                .permitAll();
     }
 
     @Bean

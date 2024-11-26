@@ -16,13 +16,4 @@ public class UserController {
     public String userPage(Model model) {
         return "user";
     }
-
-//    @GetMapping
-//    public String userPage (Model model, @AuthenticationPrincipal User user) {
-//        model.addAttribute("user", user);
-//        boolean isAdmin = user.getRoles().stream()
-//                .anyMatch(role -> role.getAuthority().equals("ROLE_ADMIN"));
-//        model.addAttribute("isAdmin", isAdmin);
-//        return "user";
-//    }
 }

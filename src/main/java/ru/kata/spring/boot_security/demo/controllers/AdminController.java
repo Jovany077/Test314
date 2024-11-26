@@ -24,43 +24,7 @@ public class AdminController {
 
     @GetMapping
     public String adminPage(Model model) {
-//        model.addAttribute("users", userService.findAll());
-//        model.addAttribute("roles", roleService.findAll());
         return "admin";
     }
-
-//    @GetMapping("/new")
-//    public String newUserForm(Model model) {
-//        model.addAttribute("user", new User());
-//        model.addAttribute("roles", roleService.findAll());
-//        return "redirect:/admin";
-//    }
-//
-//    @PostMapping("/new")
-//    public String saveUser(@ModelAttribute("user") User user) {
-//        userService.saveUser(user);
-//        return "redirect:/admin";
-//    }
-//
-//    @GetMapping("/edit/{id}")
-//    public String editUserForm(@PathVariable("id") Long id, Model model) {
-//        User user = userService.findById(id);
-//        model.addAttribute("user", user);
-//        model.addAttribute("roles", user.getRoles());
-//        return "redirect:/admin";
-//    }
-//
-//    @PostMapping("/edit")
-//    public String updateUser(@ModelAttribute("user") User user) {
-//        userService.saveUser(user);
-//        return "redirect:/admin";
-//    }
-//
-//    @PostMapping("/delete/{id}")
-//    public String deleteUser(@PathVariable("id") Long id) {
-//        userService.deleteById(id);
-//        return "redirect:/admin";
-//    }
-//
 
 }
